@@ -12,7 +12,7 @@ info_button.addEventListener("click", () => {
 
   for (let i = 0; i < sprite.length; i++) {
     if (sprite[i].checked) {
-      sprite = "." + sprite[i].value;
+      sprite = sprite[i].value;
       break;
     }
   }
