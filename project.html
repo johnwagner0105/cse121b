@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Final Project</title>
+    <link rel="stylesheet" href="styles/project.css" />
   </head>
   <body>
     <h1 id="site_title">Welcome to your Pokemon Trainer Card creator</h1>
@@ -11,76 +12,94 @@
       <label for="pkTrainerName">Enter your name: </label>
       <input id="pkTrainerName" name="pkTrainerName" type="text" />
       <label>Choose your sprite: </label>
-      <input
-        type="radio"
-        id="pkTrainerSprite_Bianca"
-        name="pkTrainerSprite"
-        value="./images/Bianca_PK.png"
-      />
-      <label for="pkTrainerSprite_Bianca"
-        ><img src="./images/Bianca_PK.png"
-      /></label>
-      <input
-        type="radio"
-        id="pkTrainerSprite_female"
-        name="pkTrainerSprite"
-        value="./images/female_prota_PK.png"
-      />
-      <label for="pkTrainerSprite_female"
-        ><img src="./images/female_prota_PK.png"
-      /></label>
-      <input
-        type="radio"
-        id="pkTrainerSprite_female2"
-        name="pkTrainerSprite"
-        value="./images/female_prota2_PK.png"
-      />
-      <label for="pkTrainerSprite_female2"
-        ><img src="./images/female_prota2_PK.png"
-      /></label>
-      <input
-        type="radio"
-        id="pkTrainerSprite_misty"
-        name="pkTrainerSprite"
-        value="./images/misty_PK.png"
-      />
-      <label for="pkTrainerSprite_misty"
-        ><img src="./images/misty_PK.png"
-      /></label>
-      <input
-        type="radio"
-        id="pkTrainerSprite_Blue"
-        name="pkTrainerSprite"
-        value="./images/Blue_PK.png"
-      />
-      <label for="pkTrainerSprite_Blue"
-        ><img src="./images/Blue_PK.png"
-      /></label>
-      <input
-        type="radio"
-        id="pkTrainerSprite_male"
-        name="pkTrainerSprite"
-        value="./images/pkTrainerSprite_male.png"
-      />
-      <label for="pkTrainerSprite_male"
-        ><img src="./images/male_prota_PK.png"
-      /></label>
-      <input
-        type="radio"
-        id="pkTrainerSprite_giovanni"
-        name="pkTrainerSprite"
-        value="./images/giovanni_PK.png"
-      />
-      <label for="pkTrainerSprite_giovanni"
-        ><img src="./images/giovanni_PK.png"
-      /></label>
-      <input
-        type="radio"
-        id="pkTrainerSprite_N"
-        name="pkTrainerSprite"
-        value="./images/N_PK.png"
-      />
-      <label for="pkTrainerSprite_N"><img src="./images/N_PK.png" /></label>
+      <div class="spriteOptions">
+        <div class="spriteSelection">
+          <input
+            type="radio"
+            id="pkTrainerSprite_Bianca"
+            name="pkTrainerSprite"
+            value="./images/Bianca_PK.png"
+          />
+          <label for="pkTrainerSprite_Bianca"
+            ><img src="./images/Bianca_PK.png"
+          /></label>
+        </div>
+        <div class="spriteSelection">
+          <input
+            type="radio"
+            id="pkTrainerSprite_female"
+            name="pkTrainerSprite"
+            value="./images/female_prota_PK.png"
+          />
+          <label for="pkTrainerSprite_female"
+            ><img src="./images/female_prota_PK.png"
+          /></label>
+        </div>
+        <div class="spriteSelection">
+          <input
+            type="radio"
+            id="pkTrainerSprite_female2"
+            name="pkTrainerSprite"
+            value="./images/female_prota2_PK.png"
+          />
+          <label for="pkTrainerSprite_female2"
+            ><img src="./images/female_prota2_PK.png"
+          /></label>
+        </div>
+        <div class="spriteSelection">
+          <input
+            type="radio"
+            id="pkTrainerSprite_misty"
+            name="pkTrainerSprite"
+            value="./images/misty_PK.png"
+          />
+          <label for="pkTrainerSprite_misty"
+            ><img src="./images/misty_PK.png"
+          /></label>
+        </div>
+        <div class="spriteSelection">
+          <input
+            type="radio"
+            id="pkTrainerSprite_Blue"
+            name="pkTrainerSprite"
+            value="./images/Blue_PK.png"
+          />
+          <label for="pkTrainerSprite_Blue"
+            ><img src="./images/Blue_PK.png"
+          /></label>
+        </div>
+        <div class="spriteSelection">
+          <input
+            type="radio"
+            id="pkTrainerSprite_male"
+            name="pkTrainerSprite"
+            value="./images/male_prota_PK.png"
+          />
+          <label for="pkTrainerSprite_male"
+            ><img src="./images/male_prota_PK.png"
+          /></label>
+        </div>
+        <div class="spriteSelection">
+          <input
+            type="radio"
+            id="pkTrainerSprite_giovanni"
+            name="pkTrainerSprite"
+            value="./images/giovanni_PK.png"
+          />
+          <label for="pkTrainerSprite_giovanni"
+            ><img src="./images/giovanni_PK.png"
+          /></label>
+        </div>
+        <div class="spriteSelection">
+          <input
+            type="radio"
+            id="pkTrainerSprite_N"
+            name="pkTrainerSprite"
+            value="./images/N_PK.png"
+          />
+          <label for="pkTrainerSprite_N"><img src="./images/N_PK.png" /></label>
+        </div>
+      </div>
       <button id="submit_trainer_info">Save</button>
     </div>
     <script src="./scripts/final_project.js"></script>
