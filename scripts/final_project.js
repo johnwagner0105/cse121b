@@ -16,8 +16,8 @@ info_button.addEventListener("click", () => {
       break;
     }
   }
-  console.log(trainer_Name);
-  console.log(sprite);
+  // console.log(trainer_Name);
+  // console.log(sprite);
   info_div.hidden = true;
   info_div.style.display = "none";
   title.innerHTML = `Welcome to your Pokemon Trainer Card, ${trainer_Name}`;
@@ -73,7 +73,7 @@ const choosePokemon = () => {
   body.appendChild(trainerCard());
   body.appendChild(div);
   savePokemon();
-  console.log(trainersPokemons.length);
+  // console.log(trainersPokemons.length);
   if (trainersPokemons.length == 6) {
     div.hidden = true;
   }
@@ -107,24 +107,51 @@ const trainerCard = () => {
 };
 
 const showPokemon = async (pokemonName) => {
-  let pokemonImage;
+  let pokemonInfo;
+  let pokemon_preview;
+  let pokemonImg;
+  let paragraph;
   const response = await fetch(
     `https://pokeapi.co/api/v2/pokemon/${pokemonName}`
   );
   if (response.ok) {
-    pokemonImage = await response.json();
+    pokemonInfo = await response.json();
   }
   pokemonImg = document.getElementById("SelectPokemon");
   if (!pokemonImg) {
+    pokemon_preview = document.createElement("div");
+    pokemon_preview.id = "pokemon_preview";
     paragraph = document.createElement("p");
     paragraph.innerHTML = "Do you really want to choose this pokemon?";
     pokemonImg = document.createElement("img");
     pokemonImg.id = "SelectPokemon";
-    pokemonImg.setAttribute("src", pokemonImage.sprites.front_default);
-    document.getElementById("pokemonSelection").appendChild(paragraph);
-    document.getElementById("pokemonSelection").appendChild(pokemonImg);
+
+    let pokemonStats = document.createElement("div");
+    pokemonStats.id = "pokemonStats";
+    pokemonInfo.stats.forEach((stat) => {
+      let statInfo = document.createElement("p");
+      statInfo.innerHTML = `${stat.stat.name}: ${stat.base_stat}`;
+      console.log(stat.base_stat);
+      console.log(stat.stat.name);
+
+      pokemonStats.appendChild(statInfo);
+    });
+
+    pokemonImg.setAttribute("src", pokemonInfo.sprites.front_default);
+    document.getElementById("pokemonSelection").appendChild(pokemon_preview);
+    document.getElementById("pokemonSelection").appendChild(pokemonStats);
+    document.getElementById("pokemon_preview").appendChild(paragraph);
+    document.getElementById("pokemon_preview").appendChild(pokemonImg);
   } else {
-    pokemonImg.setAttribute("src", pokemonImage.sprites.front_default);
+    pokemonImg.setAttribute("src", pokemonInfo.sprites.front_default);
+    let pokemonStats = document.getElementById("pokemonStats");
+    pokemonStats.innerHTML = "";
+    pokemonInfo.stats.forEach((stat) => {
+      let statInfo = document.createElement("p");
+      statInfo.innerHTML = `${stat.stat.name}: ${stat.base_stat}`;
+
+      pokemonStats.appendChild(statInfo);
+    });
   }
 };
 
